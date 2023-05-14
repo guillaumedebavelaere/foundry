@@ -2,7 +2,7 @@
 # (-include to ignore error if it does not exist)
 -include .env
 
-all: clean remove install update solc build 
+all: clean remove install update build 
 
 # Install proper solc version.
 # solc:; nix-env -iA solc-static-versions.solc_0_8_19 -if https://github.com/dapphub/dapptools/tarball/master
