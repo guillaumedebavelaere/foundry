@@ -5,7 +5,7 @@
 all: clean remove install update solc build 
 
 # Install proper solc version.
-solc:; nix-env -iA solc-static-versions.solc_0_8_19 -if https://github.com/dapphub/dapptools/tarball/master
+# solc:; nix-env -iA solc-static-versions.solc_0_8_19 -if https://github.com/dapphub/dapptools/tarball/master
 
 # Clean the repo
 clean  :; forge clean
