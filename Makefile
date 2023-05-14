@@ -2,7 +2,7 @@
 # (-include to ignore error if it does not exist)
 -include .env
 
-all: clean remove install update build test
+all: clean remove install update build
 
 # Install proper solc version.
 # solc:; nix-env -iA solc-static-versions.solc_0_8_19 -if https://github.com/dapphub/dapptools/tarball/master
@@ -23,9 +23,6 @@ update:; forge update
 
 # Builds
 build  :; forge clean && forge build --optimize --optimizer-runs 1000000
-
-# Test
-test :; forge test
 
 setup-yarn:
 	yarn 

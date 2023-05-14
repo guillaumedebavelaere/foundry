@@ -1,0 +1,10 @@
+{
+  "name": "hardhat-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Guillaume Debavelaere <guillaume.debavelaere@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "hardhat": "^2.14.0"
+  }
+}

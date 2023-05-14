@@ -34,3 +34,19 @@ Pass a parameter to the test function:
  ```
  function testStake(uint8 amount) public {
 ```
+
+# Deploy
+
+(We used hardhat to spin up a local node: `yarn hardhat node` or `make local-node`)
+
+```
+forge create StakeContract --private-key ${PRIVATE_KEY}
+```
+
+add `--rpc-url` to specify a rpc url (by default http://127.0.0.1:8545/)
+
+# Foudry book
+https://book.getfoundry.sh/forge/forge-std
+
+# Foudry repo
+https://github.com/foundry-rs/forge-std
