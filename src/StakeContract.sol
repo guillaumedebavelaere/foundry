@@ -9,6 +9,9 @@ contract StakeContract {
     mapping(address user => mapping(address token => uint256 amount))
         public stackedBalances;
 
+    uint256 private hiddenValue;
+    uint256 public shouldAlwaysBeZero;
+
     function stake(uint256 amount, address token) external returns (bool) {
         stackedBalances[msg.sender][token] += amount;
         bool success = IERC20(token).transferFrom(
@@ -20,5 +23,15 @@ contract StakeContract {
             revert TransferFailed();
         }
         return success;
+    }
+
+    function doStuff(uint256 data) external {
+        // if (data == 2) {
+        //     shouldAlwaysBeZero = 1; // error will be discovered by fuzz test testDoStuff
+        // } 
+        // if (hiddenValue == 7) {
+        //     shouldAlwaysBeZero = 1; // error will be discovered by invariant test
+        // } 
+        hiddenValue = data;
     }
 }

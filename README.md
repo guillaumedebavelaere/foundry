@@ -35,6 +35,10 @@ Pass a parameter to the test function:
  function testStake(uint8 amount) public {
 ```
 
+# Invariant testing
+See `invariant_testDoStuff` in `StakeContractTest`
+https://book.getfoundry.sh/forge/invariant-testing
+
 # Deploy
 
 (We used hardhat to spin up a local node: `yarn hardhat node` or `make local-node`)
