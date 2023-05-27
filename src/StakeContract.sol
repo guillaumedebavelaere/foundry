@@ -28,10 +28,10 @@ contract StakeContract {
     function doStuff(uint256 data) external {
         // if (data == 2) {
         //     shouldAlwaysBeZero = 1; // error will be discovered by fuzz test testDoStuff
-        // } 
+        // }
         // if (hiddenValue == 7) {
         //     shouldAlwaysBeZero = 1; // error will be discovered by invariant test
-        // } 
+        // }
         hiddenValue = data;
     }
 }
