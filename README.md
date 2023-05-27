@@ -83,9 +83,18 @@ Pass a parameter to the test function:
  function testStake(uint8 amount) public {
 ```
 
+bound fuzzing:
+
+```solidity
+File: test/Fuzz.t.sol
+33:     function testFuzz_Withdraw(uint256 amount) public {
+34:         amount = bound(amount, 0, address(safe).balance);
+```
+
 # Invariant testing
 See `invariant_testDoStuff` in `StakeContractTest`
 https://book.getfoundry.sh/forge/invariant-testing
+
 
 # Deploy
 
@@ -131,6 +140,23 @@ Write
 cast send $CONTRACT_ADDRESS "doStuff(uint256)" 10 --private-key $PRIVATE_KEY 
 ```
 
+# Generate documentation
+
+```
+forge doc
+```
+
+# Chisel
+Useful to test a small feature in solidity
+Chisel is a fully-functional Solidity REPL, allowing you to write, execute, and debug Solidity directly in the command line.
+Once you finish testing, Chisel even lets you export your code to a new solidity file!
+In this sense, Chisel even serves as a Foundry script generator.
+
+```
+chisel
+```
+
+https://github.com/foundry-rs/foundry/tree/master/chisel
 
 # VS Code Solidity configuration
 If you're using VS Code, consider setting up the following Solidity configurations so that your text editor knows where to find the dependencies and your Solidity code by setting:

@@ -11,4 +11,11 @@ contract StakeContractScript is Script {
         vm.broadcast();
         new StakeContract();
     }
+
+    function run2() public {
+        uint256 privateKey = vm.envUint("PRIVATE_KEY");
+        address deployer = vm.rememberKey(privateKey);
+        vm.broadcast(deployer);
+        new StakeContract();
+    }
 }
